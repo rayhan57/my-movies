@@ -28,6 +28,8 @@ const ListFilm = ({ item }) => {
       });
   };
 
+  const roundingVote = (number) => (number ? number.toFixed(1) : "");
+
   useEffect(() => {
     getGenre();
   }, []);
@@ -42,7 +44,7 @@ const ListFilm = ({ item }) => {
       <Card.Body className="px-2 d-flex justify-content-between flex-column">
         <Card.Title className="cad-title">{item.title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted fw-normal card-subtitle">
-          {item.vote_average} {starIcon}
+          {roundingVote(item.vote_average)} {starIcon}
           <span className="float-end">{genres}</span>
         </Card.Subtitle>
         <div className="d-grid gap-2">
